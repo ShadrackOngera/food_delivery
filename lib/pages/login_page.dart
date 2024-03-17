@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
 
@@ -13,11 +12,15 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.background,
-      body: Column(children: [
-        //logo
-
-        
-      ],),
+      body: Column(
+        children: [
+          Icon(
+            Icons.dinner_dining_rounded,
+            size: 72,
+            color: Theme.of(context).colorScheme.inversePrimary,
+          ),
+        ],
+      ),
     );
   }
 }

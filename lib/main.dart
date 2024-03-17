@@ -1,5 +1,3 @@
-import 'dart:js';
-
 import 'package:flutter/material.dart';
 import 'package:food_delivery/pages/login_page.dart';
 import 'package:food_delivery/themes/theme_provider.dart';
