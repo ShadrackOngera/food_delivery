@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_delivery/pages/home_page.dart';
 import 'package:food_delivery/utils/constants.dart';
 import 'package:food_delivery/widgets/custom_textfield.dart';
 import 'package:food_delivery/widgets/primary_button.dart';
@@ -18,6 +19,15 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
+
+  login() {
+    Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => HomePage(),
+        ));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -62,6 +72,7 @@ class _LoginPageState extends State<LoginPage> {
                 height: 10,
               ),
               PrimaryButton(
+                onTap: login,
                 child: PrimaryText(
                   text: 'Sign In',
                   fontSize: 16,
