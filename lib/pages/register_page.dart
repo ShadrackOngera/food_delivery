@@ -4,20 +4,21 @@ import 'package:food_delivery/widgets/custom_textfield.dart';
 import 'package:food_delivery/widgets/primary_button.dart';
 import 'package:food_delivery/widgets/primary_text.dart';
 
-class LoginPage extends StatefulWidget {
+class RegisterPage extends StatefulWidget {
   final Function()? onTap;
-  const LoginPage({
+  const RegisterPage({
     super.key,
     required this.onTap,
   });
 
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<RegisterPage> createState() => _RegisterPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _RegisterPageState extends State<RegisterPage> {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
+  TextEditingController confirmPasswordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,7 +38,7 @@ class _LoginPageState extends State<LoginPage> {
                 height: 20,
               ),
               PrimaryText(
-                text: Constants.appName,
+                text: 'Lets Create Your Account',
                 fontSize: 18,
                 fontWeight: FontWeight.w500,
                 color: Theme.of(context).colorScheme.primary,
@@ -61,9 +62,17 @@ class _LoginPageState extends State<LoginPage> {
               const SizedBox(
                 height: 10,
               ),
+              PrimaryTextField(
+                obsecureText: true,
+                controller: confirmPasswordController,
+                hintText: 'Confirm Password',
+              ),
+              const SizedBox(
+                height: 10,
+              ),
               PrimaryButton(
                 child: PrimaryText(
-                  text: 'Sign In',
+                  text: 'Sign Up',
                   fontSize: 16,
                   fontWeight: FontWeight.w600,
                   color: Theme.of(context).colorScheme.inversePrimary,
@@ -76,7 +85,7 @@ class _LoginPageState extends State<LoginPage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   PrimaryText(
-                    text: 'Not a Member?',
+                    text: 'Already have an Account?',
                     color: Theme.of(context).colorScheme.inversePrimary,
                   ),
                   const SizedBox(
@@ -85,7 +94,7 @@ class _LoginPageState extends State<LoginPage> {
                   GestureDetector(
                     onTap: widget.onTap,
                     child: PrimaryText(
-                      text: 'Register Now',
+                      text: 'Login Now',
                       fontWeight: FontWeight.w700,
                       color: Theme.of(context).colorScheme.inversePrimary,
                     ),
