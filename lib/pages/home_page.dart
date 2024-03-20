@@ -18,9 +18,15 @@ class _HomePageState extends State<HomePage> {
       body: NestedScrollView(
         headerSliverBuilder: (context, innerBoxIsScrolled) => [
           MySliverAppbar(
-            child: PrimaryText(
-              text: 'child',
-              color: Theme.of(context).colorScheme.inversePrimary,
+            child: SafeArea(
+              child: Column(
+                children: [
+                  PrimaryText(
+                    text: 'child',
+                    color: Theme.of(context).colorScheme.inversePrimary,
+                  ),
+                ],
+              ),
             ),
             titleWidget: PrimaryText(
               text: 'Title',

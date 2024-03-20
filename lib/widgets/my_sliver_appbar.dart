@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_delivery/widgets/primary_text.dart';
 
 class MySliverAppbar extends StatelessWidget {
   final Widget child;
@@ -26,9 +27,18 @@ class MySliverAppbar extends StatelessWidget {
         ),
       ],
       backgroundColor: Theme.of(context).colorScheme.background,
-      title: titleWidget,
+      centerTitle: true,
+      title: PrimaryText(
+        text: 'Sunset Dinner',
+        color: Theme.of(context).colorScheme.inversePrimary,
+        fontSize: 18,
+      ),
       flexibleSpace: FlexibleSpaceBar(
         background: child,
+        title: titleWidget,
+        centerTitle: true,
+        titlePadding: const EdgeInsets.symmetric(horizontal: 0),
+        expandedTitleScale: 1,
       ),
     );
   }
