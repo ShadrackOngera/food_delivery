@@ -13,6 +13,18 @@ class MySliverAppbar extends StatelessWidget {
   Widget build(BuildContext context) {
     return SliverAppBar(
       expandedHeight: 300,
+      collapsedHeight: 120,
+      pinned: true,
+      floating: false,
+      actions: [
+        IconButton(
+          onPressed: () {},
+          icon: Icon(
+            Icons.shopping_cart,
+            color: Theme.of(context).colorScheme.inversePrimary,
+          ),
+        ),
+      ],
       backgroundColor: Theme.of(context).colorScheme.background,
       title: titleWidget,
       flexibleSpace: FlexibleSpaceBar(
