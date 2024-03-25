@@ -20,7 +20,11 @@ class _HomePageState extends State<HomePage> {
           MySliverAppbar(
             child: SafeArea(
               child: Column(
+                mainAxisAlignment: MainAxisAlignment.end,
                 children: [
+                  Divider(
+                    color: Theme.of(context).colorScheme.secondary,
+                  ),
                   PrimaryText(
                     text: 'child',
                     color: Theme.of(context).colorScheme.inversePrimary,
