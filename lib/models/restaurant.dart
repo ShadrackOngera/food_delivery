@@ -361,10 +361,34 @@ class Restaurant extends ChangeNotifier {
   // remove from cart
 
   void removeFromCart(CartItem cartItem) {
-    int cartIndex
+    int cartIndex = _cart.indexOf(cartItem);
+
+    if (cartIndex != -1) {
+      if (_cart[cartIndex].quntity > 1) {
+        _cart[cartIndex].quntity--;
+      } else {
+        _cart.removeAt(cartIndex);
+      }
+    }
   }
 
   // total price of cart
+
+  double getTotalPrice() {
+    double total = 0.00;
+
+    for (CartItem cartItem in _cart) {
+      double itemTotal = cartItem.food.price;
+
+      for (Addon addon in cartItem.selectedAddons) {
+        itemTotal += addon.price;
+      }
+       total += itemTotal * cartItem.quntity;
+    }
+    return total;
+
+   
+  }
 
   // number of items in cart
 
