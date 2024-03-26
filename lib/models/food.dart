@@ -19,7 +19,7 @@ class Food {
 enum FoodCategory {
   burgers,
   salads,
-  desert,
+  desserts,
   drinks,
   sides,
 }
