@@ -38,7 +38,7 @@ class MyDescription extends StatelessWidget {
                 color: Theme.of(context).colorScheme.inversePrimary,
               ),
               PrimaryText(
-                text: 'Delivery Fee',
+                text: 'Delivery Time',
                 color: Theme.of(context).colorScheme.inversePrimary,
               ),
             ],

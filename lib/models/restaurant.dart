@@ -1,6 +1,7 @@
+import 'package:flutter/material.dart';
 import 'package:food_delivery/models/food.dart';
 
-class Restaurant {
+class Restaurant extends ChangeNotifier {
   // list of food menu
   final List<Food> _menu = [
     //burgers
@@ -95,7 +96,7 @@ class Restaurant {
       name: 'Greek Salad',
       description:
           'Fresh salad with tomatoes, cucumbers, olives, and feta cheese',
-      imagePath: 'assets/images/salads/gsalad-three.jpg',
+      imagePath: 'assets/images/salads/salad-three.jpg',
       price: 820,
       category: FoodCategory.salads,
       availableAddons: [
@@ -320,4 +321,25 @@ class Restaurant {
       ],
     ),
   ];
+
+  //Getters
+  List<Food> get menu => _menu;
+
+  //Operations
+
+  // add to cart
+
+  // remove from cart
+
+  // total price of cart
+
+  // number of items in cart
+
+  //clear cart
+
+  //Helpers
+
+  //generate receipt
+  // format double value to money
+  //format list of addons
 }
