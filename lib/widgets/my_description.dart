@@ -7,12 +7,15 @@ class MyDescription extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      padding: EdgeInsets.all(13),
       decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(10),
         border: Border.all(
           color: Theme.of(context).colorScheme.secondary,
         ),
       ),
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Column(
             // crossAxisAlignment: CrossAxisAlignment.start,

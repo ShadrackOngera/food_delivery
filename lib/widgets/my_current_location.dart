@@ -61,6 +61,9 @@ class MyCurrentLocation extends StatelessWidget {
             ],
           ),
         ),
+        const SizedBox(
+          height: 10,
+        ),
       ],
     );
   }
