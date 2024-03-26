@@ -12,9 +12,9 @@ class Restaurant extends ChangeNotifier {
       price: 200,
       category: FoodCategory.burgers,
       availableAddons: [
-        Addons(name: 'extra cheese', price: 80),
-        Addons(name: 'ketchup', price: 120),
-        Addons(name: 'extra bacon', price: 399),
+        Addon(name: 'extra cheese', price: 80),
+        Addon(name: 'ketchup', price: 120),
+        Addon(name: 'extra bacon', price: 399),
       ],
     ),
     Food(
@@ -24,9 +24,9 @@ class Restaurant extends ChangeNotifier {
       price: 276,
       category: FoodCategory.burgers,
       availableAddons: [
-        Addons(name: 'extra cheese', price: 80),
-        Addons(name: 'ketchup', price: 120),
-        Addons(name: 'extra bacon', price: 399),
+        Addon(name: 'extra cheese', price: 80),
+        Addon(name: 'ketchup', price: 120),
+        Addon(name: 'extra bacon', price: 399),
       ],
     ),
     Food(
@@ -36,9 +36,9 @@ class Restaurant extends ChangeNotifier {
       price: 500,
       category: FoodCategory.burgers,
       availableAddons: [
-        Addons(name: 'extra cheese', price: 80),
-        Addons(name: 'ketchup', price: 120),
-        Addons(name: 'extra bacon', price: 399),
+        Addon(name: 'extra cheese', price: 80),
+        Addon(name: 'ketchup', price: 120),
+        Addon(name: 'extra bacon', price: 399),
       ],
     ),
     Food(
@@ -48,9 +48,9 @@ class Restaurant extends ChangeNotifier {
       price: 341,
       category: FoodCategory.burgers,
       availableAddons: [
-        Addons(name: 'extra cheese', price: 80),
-        Addons(name: 'ketchup', price: 120),
-        Addons(name: 'extra bacon', price: 399),
+        Addon(name: 'extra cheese', price: 80),
+        Addon(name: 'ketchup', price: 120),
+        Addon(name: 'extra bacon', price: 399),
       ],
     ),
     Food(
@@ -60,9 +60,9 @@ class Restaurant extends ChangeNotifier {
       price: 760,
       category: FoodCategory.burgers,
       availableAddons: [
-        Addons(name: 'extra cheese', price: 80),
-        Addons(name: 'ketchup', price: 120),
-        Addons(name: 'extra bacon', price: 399),
+        Addon(name: 'extra cheese', price: 80),
+        Addon(name: 'ketchup', price: 120),
+        Addon(name: 'extra bacon', price: 399),
       ],
     ),
 
@@ -74,9 +74,9 @@ class Restaurant extends ChangeNotifier {
       price: 760,
       category: FoodCategory.salads,
       availableAddons: [
-        Addons(name: 'Salad', price: 80),
-        Addons(name: 'Ketchup', price: 120),
-        Addons(name: 'Tomato Sauce', price: 399),
+        Addon(name: 'Salad', price: 80),
+        Addon(name: 'Ketchup', price: 120),
+        Addon(name: 'Tomato Sauce', price: 399),
       ],
     ),
     Food(
@@ -87,9 +87,9 @@ class Restaurant extends ChangeNotifier {
       price: 890,
       category: FoodCategory.salads,
       availableAddons: [
-        Addons(name: 'Grilled Chicken', price: 200),
-        Addons(name: 'Shrimp', price: 250),
-        Addons(name: 'Parmesan Cheese', price: 150),
+        Addon(name: 'Grilled Chicken', price: 200),
+        Addon(name: 'Shrimp', price: 250),
+        Addon(name: 'Parmesan Cheese', price: 150),
       ],
     ),
     Food(
@@ -100,9 +100,9 @@ class Restaurant extends ChangeNotifier {
       price: 820,
       category: FoodCategory.salads,
       availableAddons: [
-        Addons(name: 'Grilled Lamb', price: 300),
-        Addons(name: 'Red Onion', price: 100),
-        Addons(name: 'Olive Oil', price: 80),
+        Addon(name: 'Grilled Lamb', price: 300),
+        Addon(name: 'Red Onion', price: 100),
+        Addon(name: 'Olive Oil', price: 80),
       ],
     ),
     Food(
@@ -113,9 +113,9 @@ class Restaurant extends ChangeNotifier {
       price: 780,
       category: FoodCategory.salads,
       availableAddons: [
-        Addons(name: 'Goat Cheese', price: 150),
-        Addons(name: 'Walnuts', price: 120),
-        Addons(name: 'Honey Mustard Dressing', price: 100),
+        Addon(name: 'Goat Cheese', price: 150),
+        Addon(name: 'Walnuts', price: 120),
+        Addon(name: 'Honey Mustard Dressing', price: 100),
       ],
     ),
     Food(
@@ -126,9 +126,9 @@ class Restaurant extends ChangeNotifier {
       price: 850,
       category: FoodCategory.salads,
       availableAddons: [
-        Addons(name: 'Avocado', price: 180),
-        Addons(name: 'Chickpeas', price: 120),
-        Addons(name: 'Cilantro', price: 80),
+        Addon(name: 'Avocado', price: 180),
+        Addon(name: 'Chickpeas', price: 120),
+        Addon(name: 'Cilantro', price: 80),
       ],
     ),
 
@@ -140,9 +140,9 @@ class Restaurant extends ChangeNotifier {
       price: 350,
       category: FoodCategory.sides,
       availableAddons: [
-        Addons(name: 'Cheese Dip', price: 100),
-        Addons(name: 'Marinara Sauce', price: 80),
-        Addons(name: 'Pesto Dip', price: 120),
+        Addon(name: 'Cheese Dip', price: 100),
+        Addon(name: 'Marinara Sauce', price: 80),
+        Addon(name: 'Pesto Dip', price: 120),
       ],
     ),
     Food(
@@ -152,9 +152,9 @@ class Restaurant extends ChangeNotifier {
       price: 250,
       category: FoodCategory.sides,
       availableAddons: [
-        Addons(name: 'Chili Cheese', price: 120),
-        Addons(name: 'Truffle Aioli', price: 150),
-        Addons(name: 'Sweet Potato Fries', price: 180),
+        Addon(name: 'Chili Cheese', price: 120),
+        Addon(name: 'Truffle Aioli', price: 150),
+        Addon(name: 'Sweet Potato Fries', price: 180),
       ],
     ),
     Food(
@@ -164,9 +164,9 @@ class Restaurant extends ChangeNotifier {
       price: 280,
       category: FoodCategory.sides,
       availableAddons: [
-        Addons(name: 'BBQ Sauce', price: 80),
-        Addons(name: 'Ranch Dip', price: 100),
-        Addons(name: 'Buffalo Sauce', price: 120),
+        Addon(name: 'BBQ Sauce', price: 80),
+        Addon(name: 'Ranch Dip', price: 100),
+        Addon(name: 'Buffalo Sauce', price: 120),
       ],
     ),
     Food(
@@ -176,9 +176,9 @@ class Restaurant extends ChangeNotifier {
       price: 300,
       category: FoodCategory.sides,
       availableAddons: [
-        Addons(name: 'Bacon Bits', price: 120),
-        Addons(name: 'Chives', price: 80),
-        Addons(name: 'Crispy Onions', price: 100),
+        Addon(name: 'Bacon Bits', price: 120),
+        Addon(name: 'Chives', price: 80),
+        Addon(name: 'Crispy Onions', price: 100),
       ],
     ),
     Food(
@@ -188,9 +188,9 @@ class Restaurant extends ChangeNotifier {
       price: 220,
       category: FoodCategory.sides,
       availableAddons: [
-        Addons(name: 'Raisins', price: 50),
-        Addons(name: 'Apple Cider Vinegar', price: 80),
-        Addons(name: 'Pineapple Chunks', price: 100),
+        Addon(name: 'Raisins', price: 50),
+        Addon(name: 'Apple Cider Vinegar', price: 80),
+        Addon(name: 'Pineapple Chunks', price: 100),
       ],
     ),
 
@@ -202,9 +202,9 @@ class Restaurant extends ChangeNotifier {
       price: 480,
       category: FoodCategory.desserts,
       availableAddons: [
-        Addons(name: 'Vanilla Ice Cream', price: 100),
-        Addons(name: 'Whipped Cream', price: 80),
-        Addons(name: 'Strawberry Sauce', price: 120),
+        Addon(name: 'Vanilla Ice Cream', price: 100),
+        Addon(name: 'Whipped Cream', price: 80),
+        Addon(name: 'Strawberry Sauce', price: 120),
       ],
     ),
     Food(
@@ -214,9 +214,9 @@ class Restaurant extends ChangeNotifier {
       price: 550,
       category: FoodCategory.desserts,
       availableAddons: [
-        Addons(name: 'Blueberry Compote', price: 120),
-        Addons(name: 'Caramel Drizzle', price: 100),
-        Addons(name: 'Chocolate Shavings', price: 80),
+        Addon(name: 'Blueberry Compote', price: 120),
+        Addon(name: 'Caramel Drizzle', price: 100),
+        Addon(name: 'Chocolate Shavings', price: 80),
       ],
     ),
     Food(
@@ -227,9 +227,9 @@ class Restaurant extends ChangeNotifier {
       price: 620,
       category: FoodCategory.desserts,
       availableAddons: [
-        Addons(name: 'Cocoa Powder', price: 80),
-        Addons(name: 'Amaretto Liquor', price: 150),
-        Addons(name: 'Mint Leaves', price: 50),
+        Addon(name: 'Cocoa Powder', price: 80),
+        Addon(name: 'Amaretto Liquor', price: 150),
+        Addon(name: 'Mint Leaves', price: 50),
       ],
     ),
     Food(
@@ -240,9 +240,9 @@ class Restaurant extends ChangeNotifier {
       price: 510,
       category: FoodCategory.desserts,
       availableAddons: [
-        Addons(name: 'Kiwi Slices', price: 80),
-        Addons(name: 'Mango Cubes', price: 100),
-        Addons(name: 'Passion Fruit Glaze', price: 120),
+        Addon(name: 'Kiwi Slices', price: 80),
+        Addon(name: 'Mango Cubes', price: 100),
+        Addon(name: 'Passion Fruit Glaze', price: 120),
       ],
     ),
     Food(
@@ -253,9 +253,9 @@ class Restaurant extends ChangeNotifier {
       price: 590,
       category: FoodCategory.desserts,
       availableAddons: [
-        Addons(name: 'Toasted Almonds', price: 100),
-        Addons(name: 'Butterscotch Sauce', price: 120),
-        Addons(name: 'Chocolate Shards', price: 80),
+        Addon(name: 'Toasted Almonds', price: 100),
+        Addon(name: 'Butterscotch Sauce', price: 120),
+        Addon(name: 'Chocolate Shards', price: 80),
       ],
     ),
 
@@ -267,9 +267,9 @@ class Restaurant extends ChangeNotifier {
       price: 320,
       category: FoodCategory.drinks,
       availableAddons: [
-        Addons(name: 'Milk', price: 50),
-        Addons(name: 'Vanilla Syrup', price: 80),
-        Addons(name: 'Whipped Cream', price: 60),
+        Addon(name: 'Milk', price: 50),
+        Addon(name: 'Vanilla Syrup', price: 80),
+        Addon(name: 'Whipped Cream', price: 60),
       ],
     ),
     Food(
@@ -279,9 +279,9 @@ class Restaurant extends ChangeNotifier {
       price: 280,
       category: FoodCategory.drinks,
       availableAddons: [
-        Addons(name: 'Ginger Shot', price: 100),
-        Addons(name: 'Mint Leaves', price: 50),
-        Addons(name: 'Sparkling Water', price: 70),
+        Addon(name: 'Ginger Shot', price: 100),
+        Addon(name: 'Mint Leaves', price: 50),
+        Addon(name: 'Sparkling Water', price: 70),
       ],
     ),
     Food(
@@ -291,9 +291,9 @@ class Restaurant extends ChangeNotifier {
       price: 450,
       category: FoodCategory.drinks,
       availableAddons: [
-        Addons(name: 'Raspberry', price: 80),
-        Addons(name: 'Coconut Water', price: 100),
-        Addons(name: 'Agave Syrup', price: 60),
+        Addon(name: 'Raspberry', price: 80),
+        Addon(name: 'Coconut Water', price: 100),
+        Addon(name: 'Agave Syrup', price: 60),
       ],
     ),
     Food(
@@ -303,9 +303,9 @@ class Restaurant extends ChangeNotifier {
       price: 220,
       category: FoodCategory.drinks,
       availableAddons: [
-        Addons(name: 'Honey', price: 50),
-        Addons(name: 'Lemon Slice', price: 30),
-        Addons(name: 'Ginseng', price: 80),
+        Addon(name: 'Honey', price: 50),
+        Addon(name: 'Lemon Slice', price: 30),
+        Addon(name: 'Ginseng', price: 80),
       ],
     ),
     Food(
@@ -315,9 +315,9 @@ class Restaurant extends ChangeNotifier {
       price: 380,
       category: FoodCategory.drinks,
       availableAddons: [
-        Addons(name: 'Chia Seeds', price: 80),
-        Addons(name: 'Protein Powder', price: 120),
-        Addons(name: 'Almond Milk', price: 100),
+        Addon(name: 'Chia Seeds', price: 80),
+        Addon(name: 'Protein Powder', price: 120),
+        Addon(name: 'Almond Milk', price: 100),
       ],
     ),
   ];
