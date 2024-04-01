@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_delivery/pages/cart_page.dart';
 import 'package:food_delivery/widgets/primary_text.dart';
 
 class MySliverAppbar extends StatelessWidget {
@@ -19,7 +20,12 @@ class MySliverAppbar extends StatelessWidget {
       floating: false,
       actions: [
         IconButton(
-          onPressed: () {},
+          onPressed: () => Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => const CartPage(),
+            ),
+          ),
           icon: Icon(
             Icons.shopping_cart,
             color: Theme.of(context).colorScheme.inversePrimary,
