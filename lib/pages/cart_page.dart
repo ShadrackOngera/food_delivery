@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:food_delivery/models/cart_item.dart';
 import 'package:food_delivery/models/food.dart';
 import 'package:food_delivery/models/restaurant.dart';
+import 'package:food_delivery/widgets/primary_button.dart';
 import 'package:food_delivery/widgets/primary_text.dart';
 import 'package:food_delivery/widgets/quantity_selector.dart';
 import 'package:provider/provider.dart';
@@ -65,16 +66,42 @@ class CartPage extends StatelessWidget {
             ],
           ),
           body: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Expanded(
-                child: ListView.builder(
-                    itemCount: userCart.length,
-                    itemBuilder: (context, index) {
-                      final cartItem = userCart[index];
-                      return MyCartTile(
-                        cartItem: cartItem,
-                      );
-                    }),
+                child: Column(
+                  children: [
+                    Expanded(
+                      child: userCart.isEmpty
+                          ? Center(
+                              child: PrimaryText(
+                                text: 'No items in the Cart',
+                                color: Theme.of(context)
+                                    .colorScheme
+                                    .inversePrimary,
+                              ),
+                            )
+                          : ListView.builder(
+                              itemCount: userCart.length,
+                              itemBuilder: (context, index) {
+                                final cartItem = userCart[index];
+                                return MyCartTile(
+                                  cartItem: cartItem,
+                                );
+                              }),
+                    ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(15.0),
+                child: PrimaryButton(
+                  onTap: () {},
+                  child: PrimaryText(
+                    text: 'Proceed to Checkout',
+                    color: Theme.of(context).colorScheme.inversePrimary,
+                  ),
+                ),
               ),
             ],
           ),
