@@ -2,6 +2,7 @@ import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:food_delivery/models/cart_item.dart';
 import 'package:food_delivery/models/food.dart';
+import 'package:intl/intl.dart';
 
 class Restaurant extends ChangeNotifier {
   // list of food menu
@@ -372,7 +373,6 @@ class Restaurant extends ChangeNotifier {
       }
     }
     notifyListeners();
-
   }
 
   // total price of cart
@@ -386,26 +386,23 @@ class Restaurant extends ChangeNotifier {
       for (Addon addon in cartItem.selectedAddons) {
         itemTotal += addon.price;
       }
-       total += itemTotal * cartItem.quntity;
+      total += itemTotal * cartItem.quntity;
     }
     return total;
-
-   
   }
 
   // number of items in cart
 
-
-  int getTotalItemCount(){
+  int getTotalItemCount() {
     int totalItemCount = 0;
-    for ( CartItem cartItem in _cart) {
+    for (CartItem cartItem in _cart) {
       totalItemCount += cartItem.quntity;
     }
     return totalItemCount;
   }
 
   //clear cart
-  void clearCart(){
+  void clearCart() {
     _cart.clear();
     notifyListeners();
   }
@@ -413,6 +410,42 @@ class Restaurant extends ChangeNotifier {
   //Helpers
 
   //generate receipt
+  String displayCartReceipt() {
+    final receipt = StringBuffer();
+    receipt.writeln("Here's your receipt.");
+    receipt.writeln();
+
+    //format date to include upto Second only
+    String formattedDated =
+        DateFormat('yyyy-MM-dd HH:mm:ss').format(DateTime.now());
+    receipt.writeln(formattedDated);
+    receipt.writeln();
+
+    receipt.writeln("---------");
+
+    for (final cartItem in cart) {
+      receipt.writeln(
+          "${cartItem.quntity} x ${cartItem.food.name} - ${_formatPrice(cartItem.food.price)}");
+      if (cartItem.selectedAddons.isNotEmpty) {
+        receipt.writeln("Add Ons : ${_formatAddon(cartItem.selectedAddons)}");
+      }
+      receipt.writeln();
+
+      receipt.writeln("---------");
+      receipt.writeln();
+      receipt.writeln("Total Items: ${getTotalItemCount()}");
+      receipt.writeln("Total Price: ${_formatPrice(getTotalPrice())}");
+    }
+    return receipt.toString();
+  }
+
   // format double value to money
+  String _formatPrice(double price) {
+    return "Ksh${price.toStringAsFixed(2)}";
+  }
+
   //format list of addons
+  String _formatAddon(List<Addon> addons) {
+    return addons.map((addon) => "${addon.name} (${addon.price})").join(", ");
+  }
 }
