@@ -67,10 +67,13 @@ class _HomePageState extends State<HomePage>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: MyDrawer(),
+      drawer: const MyDrawer(),
       body: NestedScrollView(
         headerSliverBuilder: (context, innerBoxIsScrolled) => [
           MySliverAppbar(
+            titleWidget: MyTabBar(
+              tabController: _tabController,
+            ),
             child: Padding(
               padding: const EdgeInsets.only(left: 13.0, right: 13, bottom: 50),
               child: Column(
@@ -79,13 +82,10 @@ class _HomePageState extends State<HomePage>
                   Divider(
                     color: Theme.of(context).colorScheme.secondary,
                   ),
-                  MyCurrentLocation(),
-                  MyDescription(),
+                  const MyCurrentLocation(),
+                  const MyDescription(),
                 ],
               ),
-            ),
-            titleWidget: MyTabBar(
-              tabController: _tabController,
             ),
           ),
         ],

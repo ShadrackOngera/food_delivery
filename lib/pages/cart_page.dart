@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:food_delivery/models/cart_item.dart';
 import 'package:food_delivery/models/food.dart';
 import 'package:food_delivery/models/restaurant.dart';
+import 'package:food_delivery/pages/payment_page.dart';
 import 'package:food_delivery/widgets/primary_button.dart';
 import 'package:food_delivery/widgets/primary_text.dart';
 import 'package:food_delivery/widgets/quantity_selector.dart';
@@ -96,7 +97,12 @@ class CartPage extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.all(15.0),
                 child: PrimaryButton(
-                  onTap: () {},
+                  onTap: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const PaymentPage(),
+                    ),
+                  ),
                   child: PrimaryText(
                     text: 'Proceed to Checkout',
                     color: Theme.of(context).colorScheme.inversePrimary,
@@ -122,8 +128,8 @@ class MyCartTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Consumer<Restaurant>(
       builder: (context, restaurant, child) => Container(
-        margin: EdgeInsets.symmetric(horizontal: 13, vertical: 8),
-        padding: EdgeInsets.only(right: 5),
+        margin: const EdgeInsets.symmetric(horizontal: 13, vertical: 8),
+        padding: const EdgeInsets.only(right: 5),
         decoration: BoxDecoration(
           color: Theme.of(context).colorScheme.secondary,
           borderRadius: BorderRadius.circular(10),
@@ -159,10 +165,10 @@ class MyCartTile extends StatelessWidget {
                     ),
                   ],
                 ),
-                Spacer(),
+                const Spacer(),
 
                 //incremenrt and decrement quantity
-                quantitySelector(
+                QuantitySelector(
                   food: cartItem.food,
                   quantity: cartItem.quntity,
                   onDecrement: () {
@@ -179,7 +185,7 @@ class MyCartTile extends StatelessWidget {
             SizedBox(
               height: cartItem.selectedAddons.isEmpty ? 0 : 60,
               child: Padding(
-                padding: EdgeInsets.only(
+                padding: const EdgeInsets.only(
                   left: 7,
                   bottom: 9,
                   right: 7,

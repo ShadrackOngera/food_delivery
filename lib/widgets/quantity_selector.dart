@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:food_delivery/models/food.dart';
 import 'package:food_delivery/widgets/primary_text.dart';
 
-class quantitySelector extends StatelessWidget {
+class QuantitySelector extends StatelessWidget {
   final int quantity;
   final Food food;
   final VoidCallback onIncrement;
   final VoidCallback onDecrement;
 
-  const quantitySelector({
+  const QuantitySelector({
     super.key,
     required this.quantity,
     required this.food,
@@ -19,7 +19,7 @@ class quantitySelector extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
       decoration: BoxDecoration(
           color: Theme.of(context).colorScheme.background,
           borderRadius: BorderRadius.circular(20)),

@@ -341,7 +341,7 @@ class Restaurant extends ChangeNotifier {
       bool isSameFood = item.food == food;
 
       // check if list of selected addons is ssame
-      bool isSameAddons = ListEquality().equals(
+      bool isSameAddons = const ListEquality().equals(
         item.selectedAddons,
         selectedAddons,
       );

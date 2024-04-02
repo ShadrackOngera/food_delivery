@@ -142,7 +142,7 @@ class _FoodPageState extends State<FoodPage> {
           child: GestureDetector(
             onTap: () => Navigator.pop(context),
             child: Container(
-              margin: EdgeInsets.all(8),
+              margin: const EdgeInsets.all(8),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(7),
                 color: Theme.of(context).colorScheme.background.withOpacity(.1),
