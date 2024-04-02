@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery/models/cart_item.dart';
+import 'package:food_delivery/models/food.dart';
 import 'package:food_delivery/models/restaurant.dart';
 import 'package:food_delivery/widgets/primary_text.dart';
 import 'package:food_delivery/widgets/quantity_selector.dart';
@@ -56,6 +57,12 @@ class MyCartTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Consumer<Restaurant>(
       builder: (context, restaurant, child) => Container(
+        margin: EdgeInsets.symmetric(horizontal: 13, vertical: 8),
+        padding: EdgeInsets.only(right: 5),
+        decoration: BoxDecoration(
+          color: Theme.of(context).colorScheme.secondary,
+          borderRadius: BorderRadius.circular(10),
+        ),
         child: Column(
           children: [
             Row(
@@ -70,7 +77,9 @@ class MyCartTile extends StatelessWidget {
                     fit: BoxFit.cover,
                   ),
                 ),
-
+                const SizedBox(
+                  width: 20,
+                ),
                 //name and price
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -85,6 +94,7 @@ class MyCartTile extends StatelessWidget {
                     ),
                   ],
                 ),
+                Spacer(),
 
                 //incremenrt and decrement quantity
                 quantitySelector(
@@ -101,6 +111,43 @@ class MyCartTile extends StatelessWidget {
               ],
             ),
             //addons
+            SizedBox(
+              height: cartItem.selectedAddons.isEmpty ? 0 : 60,
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+                children: cartItem.selectedAddons
+                    .map(
+                      (addon) => FilterChip(
+                        label: Row(
+                          children: [
+                            PrimaryText(
+                              text: addon.name,
+                              color:
+                                  Theme.of(context).colorScheme.inversePrimary,
+                            ),
+                            PrimaryText(
+                              text: "Ksh${addon.price}",
+                              color:
+                                  Theme.of(context).colorScheme.inversePrimary,
+                            ),
+                          ],
+                        ),
+                        onSelected: (value) {},
+                        shape: StadiumBorder(
+                          side: BorderSide(
+                            color: Theme.of(context).colorScheme.primary,
+                          ),
+                        ),
+                        backgroundColor:
+                            Theme.of(context).colorScheme.secondary,
+                        labelStyle: TextStyle(
+                          color: Theme.of(context).colorScheme.inversePrimary,
+                        ),
+                      ),
+                    )
+                    .toList(),
+              ),
+            ),
           ],
         ),
       ),

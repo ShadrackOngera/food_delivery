@@ -19,11 +19,12 @@ class quantitySelector extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 8),
+      padding: EdgeInsets.symmetric(horizontal: 8, vertical: 8),
       decoration: BoxDecoration(
           color: Theme.of(context).colorScheme.background,
           borderRadius: BorderRadius.circular(20)),
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           //decrease
           GestureDetector(
@@ -36,9 +37,9 @@ class quantitySelector extends StatelessWidget {
           ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 10.0),
-            child: Center(
-              child: SizedBox(
-                width: 20,
+            child: SizedBox(
+              width: 20,
+              child: Center(
                 child: PrimaryText(
                   text: quantity.toString(),
                   color: Theme.of(context).colorScheme.inversePrimary,
