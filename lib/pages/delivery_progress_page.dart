@@ -154,7 +154,7 @@ class MyReceipt extends StatelessWidget {
             height: 20,
           ),
           PrimaryText(
-            text: 'Estimated Delivery Time is 4:10 Pm',
+            text: 'Estimated Delivery Time is 4:10 PM',
             color: Theme.of(context).colorScheme.inversePrimary,
           ),
         ],
