@@ -82,7 +82,7 @@ class _HomePageState extends State<HomePage>
                   Divider(
                     color: Theme.of(context).colorScheme.secondary,
                   ),
-                  const MyCurrentLocation(),
+                   MyCurrentLocation(),
                   const MyDescription(),
                 ],
               ),
