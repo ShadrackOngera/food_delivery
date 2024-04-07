@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_delivery/services/auth/auth_service.dart';
 import 'package:food_delivery/utils/constants.dart';
 import 'package:food_delivery/widgets/custom_textfield.dart';
 import 'package:food_delivery/widgets/primary_button.dart';
@@ -19,6 +20,22 @@ class _RegisterPageState extends State<RegisterPage> {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   TextEditingController confirmPasswordController = TextEditingController();
+
+
+  void registar () async{
+    //get the auth service
+    final authService = AuthService();
+
+    //check if passwords match
+    if (passwordController.text == confirmPasswordController.text) {
+      // try creating user
+      try {
+        
+      } catch (e) {
+        
+      }
+    }
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
