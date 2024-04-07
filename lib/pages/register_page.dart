@@ -107,6 +107,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 height: 10,
               ),
               PrimaryButton(
+                onTap: registar,
                 child: PrimaryText(
                   text: 'Sign Up',
                   fontSize: 16,
