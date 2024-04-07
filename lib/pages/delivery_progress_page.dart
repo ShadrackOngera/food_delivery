@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery/models/restaurant.dart';
+import 'package:food_delivery/services/database/firestore.dart';
 import 'package:food_delivery/widgets/primary_text.dart';
 import 'package:provider/provider.dart';
 
@@ -11,6 +12,16 @@ class DeliveryProgressPage extends StatefulWidget {
 }
 
 class _DeliveryProgressPageState extends State<DeliveryProgressPage> {
+  //get access to db
+  FireStoreService db = FireStoreService();
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+
+    String receipt  = context.read<Restaurant>().displayCartReceipt();
+    db.saveOrderToDatabase(receipt);
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
