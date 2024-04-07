@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery/models/food.dart';
-import 'package:food_delivery/widgets/primary_text.dart';
 
 class MyTabBar extends StatelessWidget {
   final TabController tabController;
@@ -19,11 +18,9 @@ class MyTabBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: TabBar(
-        controller: tabController,
-        tabs: _buildCategoryTabs(),
-      ),
+    return  TabBar(
+      controller: tabController,
+      tabs: _buildCategoryTabs(),
     );
   }
 }

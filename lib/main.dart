@@ -1,7 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:food_delivery/services/auth/auth_gate.dart';
-import 'package:food_delivery/services/auth/login_or_register.dart';
 import 'package:food_delivery/firebase_options.dart';
 import 'package:food_delivery/models/restaurant.dart';
 import 'package:food_delivery/themes/theme_provider.dart';

@@ -20,7 +20,6 @@ class AuthService {
       );
       return userCredential;
     } on FirebaseAuthException catch (e) {
-      print(e.code);
       throw Exception(e.code);
     }
   }
@@ -36,7 +35,6 @@ class AuthService {
       );
       return userCredential;
     } on FirebaseAuthException catch (e) {
-      print(e.code);
       throw Exception(e.code);
     }
   }

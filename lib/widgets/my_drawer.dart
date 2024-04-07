@@ -7,8 +7,8 @@ class MyDrawer extends StatelessWidget {
   const MyDrawer({super.key});
 
   logout() async {
-    final _authService = AuthService();
-    await _authService.signOut();
+    final authService = AuthService();
+    await authService.signOut();
   }
 
   @override
@@ -18,7 +18,7 @@ class MyDrawer extends StatelessWidget {
         child: Column(
           children: [
             Padding(
-              padding: EdgeInsets.only(top: 20),
+              padding: const EdgeInsets.only(top: 20),
               child: Icon(
                 Icons.dinner_dining_rounded,
                 size: 72,
@@ -48,7 +48,7 @@ class MyDrawer extends StatelessWidget {
                 );
               },
             ),
-            Spacer(),
+            const Spacer(),
             MyDrawerTile(
               iconData: Icons.logout,
               text: 'L O G O U T',
