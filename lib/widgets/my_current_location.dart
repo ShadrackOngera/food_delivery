@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:food_delivery/models/restaurant.dart';
 import 'package:food_delivery/widgets/primary_text.dart';
+import 'package:provider/provider.dart';
 
 class MyCurrentLocation extends StatelessWidget {
-  const MyCurrentLocation({super.key});
+  MyCurrentLocation({super.key});
+
+  TextEditingController addressController = TextEditingController();
 
   void openLocationSearchBox(BuildContext context) {
     showDialog(
@@ -13,8 +17,9 @@ class MyCurrentLocation extends StatelessWidget {
           color: Theme.of(context).colorScheme.inversePrimary,
         ),
         content: TextField(
+          controller: addressController,
           decoration: InputDecoration(
-            hintText: 'Search Address',
+            hintText: 'Enter Address',
           ),
         ),
         actions: [
@@ -26,7 +31,11 @@ class MyCurrentLocation extends StatelessWidget {
             ),
           ),
           MaterialButton(
-            onPressed: () => Navigator.pop(context),
+            onPressed: () {
+              Navigator.pop(context);
+              String newAddress = addressController.text;
+              context.read<Restaurant>().updateDeliveryAddress(newAddress);
+            },
             child: PrimaryText(
               text: 'Save',
               color: Theme.of(context).colorScheme.inversePrimary,
@@ -50,9 +59,11 @@ class MyCurrentLocation extends StatelessWidget {
           onTap: () => openLocationSearchBox(context),
           child: Row(
             children: [
-              PrimaryText(
-                text: 'Nchiru Meru University',
-                color: Theme.of(context).colorScheme.inversePrimary,
+              Consumer<Restaurant>(
+                builder: (context, restaurant, child) => PrimaryText(
+                  text: restaurant.deliveryAddress,
+                  color: Theme.of(context).colorScheme.inversePrimary,
+                ),
               ),
               Icon(
                 Icons.keyboard_arrow_down_rounded,

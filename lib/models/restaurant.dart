@@ -328,8 +328,12 @@ class Restaurant extends ChangeNotifier {
   //Getters
   List<Food> get menu => _menu;
   List<CartItem> get cart => _cart;
+  String get deliveryAddress => _deliveryAddress;
 
   //Operations
+
+  //delivery address
+  String _deliveryAddress = 'Meru University of Science and Technology';
 
   // user cart
 
@@ -407,6 +411,12 @@ class Restaurant extends ChangeNotifier {
     notifyListeners();
   }
 
+  //update delivery address
+  void updateDeliveryAddress(String newAddress) {
+    _deliveryAddress = newAddress;
+    notifyListeners();
+  }
+
   //Helpers
 
   //generate receipt
@@ -429,6 +439,8 @@ class Restaurant extends ChangeNotifier {
       if (cartItem.selectedAddons.isNotEmpty) {
         receipt.writeln("Add Ons : ${_formatAddon(cartItem.selectedAddons)}");
       }
+      receipt.writeln();
+      receipt.writeln('Delivering to: $deliveryAddress');
       receipt.writeln();
 
       receipt.writeln("---------");
