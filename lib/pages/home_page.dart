@@ -8,7 +8,6 @@ import 'package:food_delivery/widgets/my_description.dart';
 import 'package:food_delivery/widgets/my_drawer.dart';
 import 'package:food_delivery/widgets/my_sliver_appbar.dart';
 import 'package:food_delivery/widgets/my_tab_bar.dart';
-import 'package:food_delivery/widgets/primary_text.dart';
 import 'package:provider/provider.dart';
 
 class HomePage extends StatefulWidget {

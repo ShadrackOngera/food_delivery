@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery/models/cart_item.dart';
-import 'package:food_delivery/models/food.dart';
 import 'package:food_delivery/models/restaurant.dart';
 import 'package:food_delivery/pages/payment_page.dart';
 import 'package:food_delivery/widgets/primary_button.dart';

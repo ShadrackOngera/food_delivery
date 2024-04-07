@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:food_delivery/pages/home_page.dart';
 import 'package:food_delivery/services/auth/auth_service.dart';
 import 'package:food_delivery/utils/constants.dart';
 import 'package:food_delivery/widgets/custom_textfield.dart';

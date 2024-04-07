@@ -16,7 +16,6 @@ class _DeliveryProgressPageState extends State<DeliveryProgressPage> {
   FireStoreService db = FireStoreService();
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
 
     String receipt  = context.read<Restaurant>().displayCartReceipt();
@@ -33,7 +32,7 @@ class _DeliveryProgressPageState extends State<DeliveryProgressPage> {
           color: Theme.of(context).colorScheme.inversePrimary,
         ),
       ),
-      body: SingleChildScrollView(
+      body: const SingleChildScrollView(
         child: Column(
           // crossAxisAlignment: CrossAxisAlignment.center,
           children: [
@@ -47,8 +46,8 @@ class _DeliveryProgressPageState extends State<DeliveryProgressPage> {
 
   Widget _buildBottomNavBar(BuildContext context) {
     return Container(
-      margin: EdgeInsets.all(13),
-      padding: EdgeInsets.symmetric(horizontal: 20),
+      margin: const EdgeInsets.all(13),
+      padding: const EdgeInsets.symmetric(horizontal: 20),
       height: 84,
       decoration: BoxDecoration(
           color: Theme.of(context).colorScheme.secondary,
@@ -59,12 +58,12 @@ class _DeliveryProgressPageState extends State<DeliveryProgressPage> {
           GestureDetector(
             onTap: () {},
             child: Container(
-              padding: EdgeInsets.all(10),
+              padding: const EdgeInsets.all(10),
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 color: Theme.of(context).colorScheme.background,
               ),
-              child: Icon(
+              child: const Icon(
                 Icons.person,
               ),
             ),
@@ -86,13 +85,13 @@ class _DeliveryProgressPageState extends State<DeliveryProgressPage> {
               ),
             ],
           ),
-          Spacer(),
+          const Spacer(),
           Row(
             children: [
               GestureDetector(
                 onTap: () {},
                 child: Container(
-                  padding: EdgeInsets.all(10),
+                  padding: const EdgeInsets.all(10),
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     color: Theme.of(context).colorScheme.background,
@@ -109,12 +108,12 @@ class _DeliveryProgressPageState extends State<DeliveryProgressPage> {
               GestureDetector(
                 onTap: () {},
                 child: Container(
-                  padding: EdgeInsets.all(10),
+                  padding: const EdgeInsets.all(10),
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     color: Theme.of(context).colorScheme.background,
                   ),
-                  child: Icon(
+                  child: const Icon(
                     Icons.call,
                     color: Colors.green,
                   ),
@@ -145,8 +144,8 @@ class MyReceipt extends StatelessWidget {
             height: 20,
           ),
           Container(
-            padding: EdgeInsets.all(10),
-            margin: EdgeInsets.all(13),
+            padding: const EdgeInsets.all(10),
+            margin: const EdgeInsets.all(13),
             decoration: BoxDecoration(
               border: Border.all(
                 color: Theme.of(context).colorScheme.secondary,
