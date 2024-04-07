@@ -21,8 +21,7 @@ class _RegisterPageState extends State<RegisterPage> {
   TextEditingController passwordController = TextEditingController();
   TextEditingController confirmPasswordController = TextEditingController();
 
-
-  void registar () async{
+  void registar() async {
     //get the auth service
     final authService = AuthService();
 
@@ -30,12 +29,32 @@ class _RegisterPageState extends State<RegisterPage> {
     if (passwordController.text == confirmPasswordController.text) {
       // try creating user
       try {
-        
+        await authService.signUpWithEmailAndPassword(
+            emailController.text, passwordController.text);
       } catch (e) {
-        
+        showDialog(
+          context: context,
+          builder: (context) => AlertDialog(
+            title: PrimaryText(
+              text: e.toString(),
+              color: Theme.of(context).colorScheme.inversePrimary,
+            ),
+          ),
+        );
       }
+    } else {
+      showDialog(
+        context: context,
+        builder: (context) => AlertDialog(
+          title: PrimaryText(
+            text: 'Passwords Dont match',
+            color: Theme.of(context).colorScheme.inversePrimary,
+          ),
+        ),
+      );
     }
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
