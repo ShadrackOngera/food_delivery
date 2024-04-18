@@ -18,7 +18,7 @@ class MyCurrentLocation extends StatelessWidget {
         ),
         content: TextField(
           controller: addressController,
-          decoration: InputDecoration(
+          decoration: const InputDecoration(
             hintText: 'Enter Address',
           ),
         ),

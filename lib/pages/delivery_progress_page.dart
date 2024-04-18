@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery/models/restaurant.dart';
+import 'package:food_delivery/pages/home_page.dart';
 import 'package:food_delivery/services/database/firestore.dart';
+import 'package:food_delivery/widgets/primary_button.dart';
 import 'package:food_delivery/widgets/primary_text.dart';
 import 'package:provider/provider.dart';
 
@@ -18,9 +20,10 @@ class _DeliveryProgressPageState extends State<DeliveryProgressPage> {
   void initState() {
     super.initState();
 
-    String receipt  = context.read<Restaurant>().displayCartReceipt();
+    String receipt = context.read<Restaurant>().displayCartReceipt();
     db.saveOrderToDatabase(receipt);
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,6 +44,18 @@ class _DeliveryProgressPageState extends State<DeliveryProgressPage> {
         ),
       ),
       bottomNavigationBar: _buildBottomNavBar(context),
+      floatingActionButton: PrimaryButton(
+        onTap: () {
+          Navigator.of(context).pushAndRemoveUntil(
+            MaterialPageRoute(builder: (context) => const HomePage()),
+            (Route<dynamic> route) => false,
+          );
+        },
+        child: PrimaryText(
+          text: 'Home',
+          color: Theme.of(context).colorScheme.inversePrimary,
+        ),
+      ),
     );
   }
 
